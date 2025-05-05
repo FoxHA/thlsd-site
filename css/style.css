@@ -11,7 +11,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* <- prevent rogue horizontal scrolling */
+    /* Prevents sideways scrolling */
 }
 
 
@@ -36,6 +36,7 @@ header.banner img {
     height: 100%;
     object-fit: cover;
     display: block;
+    border: 8px solid #2a4d3d;
 }
 
 .banner-title {
@@ -108,14 +109,17 @@ main {
 
 .welcome-box {
     background-color: rgba(255, 255, 255, 0.85);
-    padding: 2em clamp(1em, 5vw, 3em);
+    padding: 2em;
     margin: 2em auto;
-    width: 100%;
-    max-width: 100%;
+    max-width: 90%;
     box-sizing: border-box;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border: 2px solid #2a4d3d;
+}
+
+.welcome-box h1 {
+    text-align: center;
 }
 
 
