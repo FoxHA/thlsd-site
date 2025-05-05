@@ -10,6 +10,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    /* <- prevent rogue horizontal scrolling */
 }
 
 
@@ -97,7 +99,8 @@ nav a:hover {
 main {
     padding: 2em;
     background-color: rgba(12, 83, 176, 0.5);
-    /* semi-transparent blue */
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 
@@ -105,11 +108,10 @@ main {
 
 .welcome-box {
     background-color: rgba(255, 255, 255, 0.85);
-    padding: 2em;
     padding: 2em clamp(1em, 5vw, 3em);
     margin: 2em auto;
     width: 100%;
-    max-width: none;
+    max-width: 100%;
     box-sizing: border-box;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
