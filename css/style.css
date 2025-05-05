@@ -11,7 +11,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: rgba(12, 83, 176, 0.75);
+    background-color: rgb(74, 124, 189);
     /* or solid #0c53b0 if you prefer */
 }
 
@@ -86,7 +86,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(12, 83, 176, 0);
+    background-color: rgb(74, 124, 189);
     /* forest green */
     padding: 0.8em;
     display: flex;
