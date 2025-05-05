@@ -2,6 +2,10 @@
    Global Styles
 ================================== */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -100,15 +104,16 @@ main {
 /* Welcome Message Box */
 
 .welcome-box {
-    font-family: 'Open Sans', sans-serif;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 2em;
+    padding: 2em clamp(1em, 5vw, 3em);
     margin: 2em auto;
-    max-width: 800px;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border: 2px solid #2a4d3d;
-    /* forest green */
 }
 
 
@@ -136,7 +141,7 @@ main {
     border: none;
     border-top: 3px solid #b00000;
     margin: 0.5em auto;
-    width: 80%;
+    width: 92%;
 }
 
 
@@ -156,6 +161,16 @@ footer {
 /* ================================
    Responsive Adjustments
 ================================== */
+
+.responsive-padding {
+    padding-left: clamp(1em, 5vw, 3em);
+    padding-right: clamp(1em, 5vw, 3em);
+}
+
+.responsive-padding-y {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
 
 @media (max-width: 600px) {
     .banner-title {
