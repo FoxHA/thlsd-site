@@ -30,27 +30,22 @@
 
 
   <main>
-    <div class="welcome-box">
-      <h1>Welcome from the Tizzards Harbour Local Service District</h1>
-      <p>This is the official community site for THLSD... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim
-        id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-      </p>
-    </div>
+    <section class="pdf-flyer" id="pdf-flyer" style="display: none;">
+      <h2>Special Notice</h2>
+      <iframe src="uploads/special.pdf#toolbar=0" width="100%" height="500px" style="border: none;">
+      </iframe>
+    </section>
+
+    <section class="welcome-box" id="welcome-box" style="display: none;">
+      <h1>Welcome, from us at THLSD!</h1>
+      <p id="welcome-message">Loading...</p>
+    </section>
   </main>
 
 
 
   <footer>
+    &copy; 2025 Tizzards Harbour Local Service District
     <p><span id="last-updated">Loading...</span></p>
 
 
@@ -58,6 +53,8 @@
 
   <script src="js/alert-loader.js"></script>
   <script src="js/page-info.js"></script>
+  <script src="js/pdf-loader.js"></script>
+  <script src="js/welcome-loader.js"></script>
 </body>
 
 </html>
