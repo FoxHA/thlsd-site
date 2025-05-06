@@ -19,8 +19,8 @@ body {
 .page-header {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    color: white;
-    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px -3px 0 black, 0px 3px 0 black;
+    color: black;
+    text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white, 3px 3px 0 white, -3px 0px 0 white, 3px 0px 0 white, 0px -3px 0 white, 0px 3px 0 white;
     text-align: center;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
@@ -284,8 +284,6 @@ footer {
     margin-top: 0;
     color: #2a4d3d;
 }
-
-.minutes-list {}
 
 .minutes-list table {
     width: 100%;
