@@ -223,11 +223,10 @@ footer {
     text-align: center;
     padding: 1em;
     background-color: #2a4d3d;
-    font-size: 0.9em;
     border-top: 3px solid white;
     border-bottom: 3000px solid white;
     font-weight: bold;
-    font-size: clamp(.8em, 2vw, 1.8em);
+    font-size: clamp(.8em, 2vw, 1em);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
 }
