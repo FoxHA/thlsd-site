@@ -386,11 +386,75 @@ footer {
     text-decoration: underline;
 }
 
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+    color: #2a4d3d;
+}
+
+
+/*this is where weve been making edit for mobile mostly*/
+
 @media (max-width: 600px) {
     .member {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    .calendar-weekdays div {
+        font-size: 0.85em;
+    }
+    #calendar {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 4px;
+    }
+    #calendar div {
+        padding: 0.5em 0.2em;
+        font-size: 0.85em;
+    }
+    .calendar-header-controls {
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+    .calendar-header-controls h2 {
+        font-size: 1.2em;
+    }
+    .event-card {
+        padding: 1em;
+        font-size: 0.9em;
+    }
+    .welcome-box table,
+    .welcome-box thead,
+    .welcome-box tbody,
+    .welcome-box th,
+    .welcome-box td,
+    .welcome-box tr {
+        display: block;
+        width: 100%;
+    }
+    .welcome-box thead {
+        display: none;
+    }
+    .welcome-box tr {
+        margin-bottom: 1em;
+        padding: 1em;
+        border: 2px solid #2a4d3d;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+    .welcome-box td {
+        padding: 0.4em 0.6em;
+        text-align: left;
+    }
+    .welcome-box td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        color: #2a4d3d;
+        margin-bottom: 0.3em;
     }
     .member-info {
         min-width: unset;
