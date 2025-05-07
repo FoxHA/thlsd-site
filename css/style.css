@@ -53,25 +53,22 @@ body {
 header.banner {
     position: relative;
     width: 100%;
-    height: clamp(225px, 30vw, 500px);
-    min-height: clamp(225px, 30vw, 500px);
-    /* ✅ Prevents the banner from collapsing if image fails or loads slowly */
+    min-height: 240px;
+    /* Minimum for mobile */
+    height: clamp(250px, 35vw, 480px);
+    /* Responsive height */
     overflow: hidden;
+    border-top: none;
+    border-bottom: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    /* Subtle bottom shadow */
     box-sizing: border-box;
-    display: block;
-    /* ✅ Ensures layout integrity */
 }
 
 header.banner img {
     width: 100%;
-    height: auto;
-    /* ✅ Maintains image's aspect ratio */
+    height: 100%;
     object-fit: cover;
-    /* Ensures the image covers full box without distortion */
     display: block;
-    /* Transparent to preserve spacing, optional */
 }
 
 
