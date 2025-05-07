@@ -520,102 +520,118 @@ footer {
 
 /* General mobile optimizations */
 
-@media (max-width: 600px) {
-    .member {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .calendar-weekdays div {
-        font-size: 0.85em;
-    }
-    #calendar {
-        grid-template-columns: repeat(7, 1fr);
-        gap: 4px;
-    }
-    #calendar div {
-        padding: 0.5em 0.2em;
-        font-size: 0.85em;
-    }
-    .calendar-header-controls {
-        flex-wrap: wrap;
-        gap: 0.5em;
-    }
-    .calendar-header-controls h2 {
-        font-size: 1.2em;
-    }
-    .event-card {
-        padding: 1em;
-        font-size: 0.9em;
-    }
-    /* Mobile-friendly data table style */
-    .welcome-box table,
-    .welcome-box thead,
-    .welcome-box tbody,
-    .welcome-box th,
-    .welcome-box td,
-    .welcome-box tr {
-        display: block;
-        width: 100%;
-    }
-    .welcome-box thead {
-        display: none;
-    }
-    .welcome-box tr {
-        margin-bottom: 1em;
-        padding: 1em;
-        border: 2px solid #2a4d3d;
-        border-radius: 8px;
-        background-color: #fff;
-    }
-    .welcome-box td {
-        padding: 0.4em 0.6em;
-        text-align: left;
-    }
-    .welcome-box td::before {
-        content: attr(data-label);
-        /* Label for mobile */
-        font-weight: bold;
-        display: block;
-        color: #2a4d3d;
-        margin-bottom: 0.3em;
-    }
-    .member-info {
-        min-width: unset;
-    }
-    .banner-title {
-        font-size: 1em;
-        padding: 0.3em 0.6em;
-        top: 8px;
-        left: 8px;
-    }
-    nav a {
-        padding: 0.4em 1em;
-        font-size: 0.95em;
-    }
-    .welcome-box {
-        margin: 1em 1em;
-        padding: 1.5em;
-        font-size: 1em;
-    }
-    footer {
-        font-size: 0.85em;
-        padding: 0.5em;
-    }
+.member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
+.calendar-weekdays div {
+    font-size: 0.85em;
+}
+
+#calendar {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+#calendar div {
+    padding: 0.5em 0.2em;
+    font-size: 0.85em;
+}
+
+.calendar-header-controls {
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.calendar-header-controls h2 {
+    font-size: 1.2em;
+}
+
+.event-card {
+    padding: 1em;
+    font-size: 0.9em;
+}
+
+
+/* Mobile-friendly data table style */
+
+.welcome-box table,
+.welcome-box thead,
+.welcome-box tbody,
+.welcome-box th,
+.welcome-box td,
+.welcome-box tr {
+    display: block;
+    width: 100%;
+}
+
+.welcome-box thead {
+    display: none;
+}
+
+.welcome-box tr {
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 2px solid #2a4d3d;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.welcome-box td {
+    padding: 0.4em 0.6em;
+    text-align: left;
+}
+
+.welcome-box td::before {
+    content: attr(data-label);
+    /* Label for mobile */
+    font-weight: bold;
+    display: block;
+    color: #2a4d3d;
+    margin-bottom: 0.3em;
+}
+
+.member-info {
+    min-width: unset;
+}
+
+.banner-title {
+    font-size: 1em;
+    padding: 0.3em 0.6em;
+    top: 8px;
+    left: 8px;
+}
+
+nav a {
+    padding: 0.4em 1em;
+    font-size: 0.95em;
+}
+
+.welcome-box {
+    margin: 1em 1em;
+    padding: 1.5em;
+    font-size: 1em;
+}
+
+footer {
+    font-size: 0.85em;
+    padding: 0.5em;
+}
+
+
+}
 
 /* Large screen layout optimization */
-
-@media (min-width: 1400px) {
-    main {
-        max-width: 1200px;
-    }
+main {
+    max-width: 1200px;
 }
 
-@media (max-width: 600px) {
-    header.banner {
-        min-height: 140px;
-        /* or 125px, tweak to taste */
-    }
+}
+header.banner {
+    min-height: 140px;
+    /* or 125px, tweak to taste */
+}
+
 }
