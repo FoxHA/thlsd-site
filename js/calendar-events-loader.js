@@ -31,7 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
         cell.classList.add("has-event");
         cell.addEventListener("click", () => {
           const el = document.getElementById("event-" + dateStr);
-          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (el) {
+         // Adjust offset based on screen width
+const isMobile = window.innerWidth <= 600;
+const yOffset = isMobile ? -160 : -100; // more padding on smaller screens
+const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+window.scrollTo({ top: y, behavior: "smooth" });
+
+          }
         });
       }
 

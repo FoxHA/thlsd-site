@@ -1,12 +1,9 @@
 /* ================================
    Global Styles
-   - Reset and base structure
-   - Body styling + background + borders
 ================================== */
 
 * {
     box-sizing: border-box;
-    /* Ensures padding and border stay inside width */
 }
 
 body {
@@ -14,46 +11,35 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* Prevents sideways scroll on small screens */
     background-color: rgb(74, 124, 189);
-    /* Blue-ocean background tone */
     border: 6px solid white;
-    /* Site-wide outer frame */
-    /* Alternative border: #0c53b0 if a more vivid blue is preferred */
+    /* or solid #0c53b0 if you prefer */
 }
-
-
-/* Page-wide headers used in interior sections (e.g. "Meeting Minutes") */
 
 .page-header {
     font-size: clamp(2rem, 5vw, 3rem);
-    /* Responsive size */
     font-weight: 700;
     color: black;
+    text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white, 3px 3px 0 white, -3px 0px 0 white, 3px 0px 0 white, 0px -3px 0 white, 0px 3px 0 white;
     text-align: center;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    /* White outline around text for contrast against blue backgrounds */
-    text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white, 3px 3px 0 white, -3px 0px 0 white, 3px 0px 0 white, 0px -3px 0 white, 0px 3px 0 white;
 }
 
 
 /* ================================
-   Banner / Header
-   - Full-width scenic image
-   - Optional title overlaid (left or centered)
+   Banner/Header
 ================================== */
 
 header.banner {
     position: relative;
     width: 100%;
     height: clamp(225px, 30vw, 5000px);
-    /* Responsive height for different screens */
+    /* 💡 Tweak values as needed */
     overflow: hidden;
     border-top: 3px solid white;
     border-bottom: 3px solid white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    /* Subtle bottom shadow */
     box-sizing: border-box;
 }
 
@@ -61,14 +47,9 @@ header.banner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensures the image covers full box without distortion */
     display: block;
     border: 8px solid rgba(12, 83, 176, 0);
-    /* Transparent to preserve spacing, optional */
 }
-
-
-/* Small title in top-left corner */
 
 .banner-title {
     position: absolute;
@@ -76,32 +57,27 @@ header.banner img {
     left: clamp(4px, 2vw, 12px);
     color: white;
     background: #2a4d3d;
-    /* Forest green solid */
+    /* forest green */
     border: 4px solid white;
     padding: 0.4em 0.4em;
     font-size: 1.4em;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 0.3em;
-    /* Rounded edges */
+    /* slightly rounded corners */
 }
-
-
-/* Centered large banner title (e.g. full name version) */
 
 .banner-title.centered {
     position: absolute;
     top: clamp(3px, 3vw, 4px);
-    /* Controlled offset from top */
     left: 50%;
     transform: translateX(-50%);
-    /* True center alignment */
     text-align: center;
     white-space: nowrap;
-    /* Keeps title from wrapping awkwardly */
+    /* ✨ Keep it on one line */
     color: white;
     background: rgba(42, 77, 61, 0.85);
-    /* Forest green, semi-transparent */
+    /* forest green semi-transparent */
     padding: 0.5em 1em;
     border: 3px solid rgba(255, 255, 255, 1);
     border-radius: 0.4em;
@@ -109,97 +85,76 @@ header.banner img {
     font-weight: bold;
     z-index: 10;
     max-width: none;
-    /* Allows for wider titles if needed */
+    /* ✨ Allow full width stretch if needed */
 }
 
 
 /* ================================
    Navigation
-   - Sticky top menu
-   - Buttons wrap neatly on smaller screens
 ================================== */
 
 nav {
     position: sticky;
     top: 0;
-    /* Sticks to top on scroll */
     z-index: 1000;
-    /* Ensures nav sits above content */
     background-color: rgb(74, 124, 189);
-    /* Matches body background */
+    /* forest green */
     padding: 0.8em;
     display: flex;
     flex-wrap: wrap;
-    /* Allows wrapping if too many buttons */
     justify-content: center;
     gap: 1em;
-    /* Spacing between buttons */
     border-top: 3px solid white;
     border-bottom: 3px solid white;
     border-top: 0;
-    /* This line overrides the top border – possibly redundant */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Light drop shadow */
+    /* subtle drop shadow */
 }
 
 nav a {
-    /* Uniform appearance for each nav button */
+    /* grow, shrink, base width */
     text-align: center;
     padding: 0.6em 1em;
     width: clamp(120px, 12vw, 180px);
-    /* Responsive button width for consistency */
     background-color: #2a4d3d;
-    /* Forest green */
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: clamp(.8em, 2vw, 1.8em);
-    /* Responsive sizing */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border: 3px solid white;
     border-radius: 0.3em;
     transition: background 0.2s, color 0.2s;
-    /* Smooth hover effect */
 }
 
 nav a:hover {
     background-color: #ee7503;
-    /* Bright orange for hover accent */
+    /* orange hover accent */
 }
 
 
 /* ================================
-   Main Content Area
-   - Core layout wrapper for most pages
+   Main Content
 ================================== */
 
 main {
     padding: 2em clamp(1em, 5vw, 3em);
-    /* Responsive horizontal padding */
     width: 100%;
     margin: 0 auto;
     border-top: 0px;
-    /* Reserved in case top border is added later */
 }
 
 
-/* ================================
-   Welcome Message Box
-   - Optional box that loads if welcome.txt is present
-   - Styled for legibility and warmth
-================================== */
+/* Welcome Message Box */
 
 .welcome-box {
     background-color: rgba(255, 255, 255, 1);
-    /* Solid white for high contrast */
     padding: 2em;
     margin: 2em auto;
     box-sizing: border-box;
     border-radius: 0.3em;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Soft outer shadow */
     border: 3px solid #2a4d3d;
-    /* Matches nav and banner borders */
 }
 
 #welcome-message {
@@ -207,26 +162,16 @@ main {
     line-height: 1.6;
     color: #222;
     font-family: Georgia, serif;
-    /* Serif for elegance and readability */
     margin-top: 0.5em;
 }
 
 .welcome-box h1 {
     text-align: center;
     font-size: clamp(1.4em, 4vw, 2em);
-    /* Responsive header */
 }
-
-
-/* ================================
-   PDF Flyer Box
-   - Loads special.pdf if present
-   - Used for community flyers, notices, etc.
-================================== */
 
 .pdf-flyer {
     background-color: rgba(255, 255, 255, 0.85);
-    /* Slight transparency */
     border: 2px solid #2a4d3d;
     border-radius: 8px;
     padding: 1em;
@@ -245,21 +190,17 @@ main {
 
 /* ================================
    Urgent Message Box
-   - Appears when alert.txt is loaded
-   - Designed to catch attention
 ================================== */
 
 .urgent-message {
     text-align: center;
     padding: 1em;
     background-color: #fff0f0;
-    /* Soft red background */
     color: #b00000;
-    /* Bold red text */
     font-weight: bold;
     font-size: 1.1em;
     display: none;
-    /* Hidden unless JS activates it */
+    /* hidden by default */
 }
 
 .urgent-message.active {
@@ -269,17 +210,9 @@ main {
 .urgent-rule {
     border: none;
     border-top: 3px solid #b00000;
-    /* Thick red separator line */
     margin: 0.5em auto;
     width: 92%;
 }
-
-
-/* ================================
-   Calendar Layout
-   - Used on events.html to show clickable dates
-   - JS generates grid and injects events
-================================== */
 
 .calendar-container {
     padding: 1em;
@@ -293,7 +226,6 @@ main {
 #calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    /* 7-day week */
     gap: 5px;
     margin-top: 1em;
     text-align: center;
@@ -304,7 +236,6 @@ main {
     background: #f0f0f0;
     border: 1px solid #ccc;
     cursor: pointer;
-    /* Indicates interactivity */
 }
 
 #calendar .has-event {
@@ -312,12 +243,6 @@ main {
     color: white;
     font-weight: bold;
 }
-
-
-/* ================================
-   Calendar Controls
-   - Next/prev buttons and month label
-================================== */
 
 .calendar-header-controls {
     display: flex;
@@ -342,26 +267,6 @@ main {
     cursor: pointer;
 }
 
-
-/* Days of the week row (above calendar cells) */
-
-.calendar-weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    font-weight: bold;
-    margin-top: -0.5em;
-    padding-bottom: 0.01em;
-    color: #2a4d3d;
-}
-
-
-/* ================================
-   Event Card List
-   - Populated by JS under calendar
-   - Shows upcoming events in card format
-================================== */
-
 .event-cards {
     max-width: 960px;
     margin: 2em auto;
@@ -381,18 +286,14 @@ main {
 
 /* ================================
    Footer
-   - Appears at bottom of every page
-   - Styled to match nav and banner
 ================================== */
 
 footer {
     text-align: center;
     padding: 1em;
     background-color: #2a4d3d;
-    /* Forest green */
     border-top: 3px solid white;
     border-bottom: 3000px solid white;
-    /* Giant white footer padding (used visually as margin/fill) */
     font-weight: bold;
     font-size: clamp(.8em, 2vw, 1em);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -401,8 +302,22 @@ footer {
 
 
 /* ================================
+   Responsive Adjustments
+================================== */
+
+.responsive-padding {
+    padding-left: clamp(1em, 5vw, 3em);
+    padding-right: clamp(1em, 5vw, 3em);
+}
+
+.responsive-padding-y {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+
+/* ================================
    Member Profiles
-   - Used on members.html to list bios and photos
 ================================== */
 
 .member {
@@ -438,12 +353,6 @@ footer {
     color: #2a4d3d;
 }
 
-
-/* ================================
-   Meeting Minutes List
-   - Table format with PDF links
-================================== */
-
 .minutes-list table {
     width: 100%;
     max-width: 960px;
@@ -477,27 +386,19 @@ footer {
     text-decoration: underline;
 }
 
-
-/* ================================
-   Responsive Tweaks
-   - For small and large screen sizes
-================================== */
-
-
-/* For layout columns and mobile padding helpers */
-
-.responsive-padding {
-    padding-left: clamp(1em, 5vw, 3em);
-    padding-right: clamp(1em, 5vw, 3em);
-}
-
-.responsive-padding-y {
-    padding-top: 2em;
-    padding-bottom: 2em;
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-top: -0.5em;
+    /* pull it up a bit */
+    padding-bottom: 0.01em;
+    color: #2a4d3d;
 }
 
 
-/* General mobile optimizations */
+/*this is where weve been making edit for mobile mostly*/
 
 @media (max-width: 600px) {
     .member {
@@ -527,7 +428,6 @@ footer {
         padding: 1em;
         font-size: 0.9em;
     }
-    /* Mobile-friendly data table style */
     .welcome-box table,
     .welcome-box thead,
     .welcome-box tbody,
@@ -553,7 +453,6 @@ footer {
     }
     .welcome-box td::before {
         content: attr(data-label);
-        /* Label for mobile */
         font-weight: bold;
         display: block;
         color: #2a4d3d;
@@ -562,6 +461,18 @@ footer {
     .member-info {
         min-width: unset;
     }
+}
+
+
+/* New: allow wider max-width on bigger screens */
+
+@media (min-width: 1400px) {
+    main {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 600px) {
     .banner-title {
         font-size: 1em;
         padding: 0.3em 0.6em;
@@ -580,14 +491,5 @@ footer {
     footer {
         font-size: 0.85em;
         padding: 0.5em;
-    }
-}
-
-
-/* Large screen layout optimization */
-
-@media (min-width: 1400px) {
-    main {
-        max-width: 1200px;
     }
 }

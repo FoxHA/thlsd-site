@@ -5,51 +5,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TH LSD</title>
+
+  <!-- Main stylesheet for all layout and custom styles -->
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Tab icon (favicon) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Basic visible visitor counter script -->
   <script src="js/hit-counter.js" defer></script>
 </head>
 
 <body>
+  <!-- Scenic image banner with main title overlaid -->
   <header class="banner">
     <img src="images/scenic-banner.jpg" alt="Tizzard's Harbour" />
     <h1 class="banner-title centered">TIZZARDS HARBOUR LOCAL SERVICE DISTRICT</h1>
   </header>
+
+  <!-- Main navigation links; same layout used across all pages -->
   <nav>
     <a href="index.html">Home</a>
     <a href="members.html">Members</a>
     <a href="minutes.html">Minutes</a>
     <a href="events.html">Events</a>
     <a href="contact.html">Forms</a>
+    <!-- Note: this points to contact.html, should be forms.html -->
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- Optional urgent message bar (only shown if alert.txt exists and is loaded) -->
   <div class="urgent-message" id="urgent-message">
-    <!-- JS will load alert.txt content here -->
+    <!-- Content dynamically inserted by alert-loader.js -->
   </div>
 
-
   <main>
+    <!-- Special flyer PDF (e.g. for events or announcements)
+         Only shown if special.pdf exists in /uploads
+         Uses iframe for cross-browser compatibility -->
     <section class="pdf-flyer" id="pdf-flyer" style="display: none;">
       <h2>Special Notice</h2>
       <iframe src="uploads/special.pdf#toolbar=0" width="100%" height="500px" style="border: none;">
       </iframe>
     </section>
 
+    <!-- Optional welcome message pulled from welcome.txt
+         If file missing, this section stays hidden -->
     <section class="welcome-box" id="welcome-box" style="display: none;">
       <h1>Welcome, from us at THLSD!</h1>
       <p id="welcome-message">Loading...</p>
     </section>
   </main>
 
-
-
+  <!-- Standard footer with copyright -->
   <footer>
-    &copy;Tizzards Harbour Local Service District
-
-
+    &copy; Tizzards Harbour Local Service District
   </footer>
 
+  <!-- Load dynamic content: alert bar, welcome message, and PDF flyer -->
   <script src="js/alert-loader.js"></script>
   <script src="js/page-info.js"></script>
   <script src="js/pdf-loader.js"></script>
