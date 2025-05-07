@@ -17,9 +17,15 @@ body {
     /* Prevents sideways scroll on small screens */
     background-color: rgb(74, 124, 189);
     /* Blue-ocean background tone */
-    border: 6px solid white;
     /* Site-wide outer frame */
     /* Alternative border: #0c53b0 if a more vivid blue is preferred */
+}
+
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -47,23 +53,24 @@ body {
 header.banner {
     position: relative;
     width: 100%;
-    height: clamp(225px, 30vw, 5000px);
-    /* Responsive height for different screens */
+    height: clamp(225px, 30vw, 500px);
+    min-height: clamp(225px, 30vw, 500px);
+    /* ✅ Prevents the banner from collapsing if image fails or loads slowly */
     overflow: hidden;
-    border-top: 3px solid white;
-    border-bottom: 3px solid white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     /* Subtle bottom shadow */
     box-sizing: border-box;
+    display: block;
+    /* ✅ Ensures layout integrity */
 }
 
 header.banner img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    /* ✅ Maintains image's aspect ratio */
     object-fit: cover;
     /* Ensures the image covers full box without distortion */
     display: block;
-    border: 8px solid rgba(12, 83, 176, 0);
     /* Transparent to preserve spacing, optional */
 }
 
@@ -134,9 +141,6 @@ nav {
     justify-content: center;
     gap: 1em;
     /* Spacing between buttons */
-    border-top: 3px solid white;
-    border-bottom: 3px solid white;
-    border-top: 0;
     /* This line overrides the top border – possibly redundant */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* Light drop shadow */
@@ -174,11 +178,12 @@ nav a:hover {
 ================================== */
 
 main {
+    /*flex tells main to take up the whole space between nav and footer*/
+    flex: 1;
     padding: 2em clamp(1em, 5vw, 3em);
     /* Responsive horizontal padding */
     width: 100%;
     margin: 0 auto;
-    border-top: 0px;
     /* Reserved in case top border is added later */
 }
 
@@ -390,9 +395,6 @@ footer {
     padding: 1em;
     background-color: #2a4d3d;
     /* Forest green */
-    border-top: 3px solid white;
-    border-bottom: 3000px solid white;
-    /* Giant white footer padding (used visually as margin/fill) */
     font-weight: bold;
     font-size: clamp(.8em, 2vw, 1em);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -475,6 +477,36 @@ footer {
 
 .minutes-list a:hover {
     text-decoration: underline;
+}
+
+
+/* ================================
+   Forms Table (Downloads Page)
+   - Basic alignment and spacing fix
+================================== */
+
+.welcome-box table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    /* Align form name and description for readability */
+}
+
+.welcome-box th {
+    text-align: center;
+    /* Center just the headers */
+    padding: 0.5em 1em;
+    vertical-align: middle;
+}
+
+.welcome-box td {
+    padding: 0.5em 1em;
+    vertical-align: middle;
+}
+
+.welcome-box tr td:last-child {
+    text-align: center;
+    /* Center the "Download" link only */
 }
 
 
@@ -589,5 +621,12 @@ footer {
 @media (min-width: 1400px) {
     main {
         max-width: 1200px;
+    }
+}
+
+@media (max-width: 600px) {
+    header.banner {
+        min-height: 140px;
+        /* or 125px, tweak to taste */
     }
 }
